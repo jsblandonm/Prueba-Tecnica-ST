@@ -1,0 +1,46 @@
+<form [formGroup]="searchForm" (submit)="onSubmit()">
+  <div class="create">
+    <div class="logo">
+      <img src="../assets/logs/icons8-hotel-100.png" alt="logo" />
+    </div>
+    <h2>Buscar Hoteles</h2>
+    <div>
+      <input
+        class="controls"
+        type="text"
+        id="checkIn"
+        placeholder="Fecha de entrada"
+        formControlName="checkIn"
+      />
+    </div>
+    <div>
+      <label for="checkOut"></label>
+      <input
+        class="controls"
+        placeholder="Fecha de salida"
+        type="text"
+        id="checkOut"
+        formControlName="checkOut"
+      />
+    </div>
+    <div>
+      <input
+        class="controls"
+        placeholder="Cantidad de personas"
+        type="number"
+        id="guests"
+        formControlName="guests"
+      />
+    </div>
+    <div>
+      <input
+        class="controls"
+        placeholder="Ciudad de destino"
+        type="text"
+        id="city"
+        formControlName="city"
+      />
+    </div>
+    <button class="boton" type="submit">Buscar</button>
+  </div>
+</form>

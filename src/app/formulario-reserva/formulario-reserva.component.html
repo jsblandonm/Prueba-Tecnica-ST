@@ -1,0 +1,144 @@
+<div *ngIf="habitacion">
+  <h2>Habitación seleccionada</h2>
+  <p>Costo base: {{ habitacion.costoBase }}</p>
+  <p>Impuestos: {{ habitacion.impuestos }}</p>
+  <p>Tipo de habitación: {{ habitacion.tipoHabitacion }}</p>
+  <p>Ubicación: {{ habitacion.ubicacion }}</p>
+
+  <form [formGroup]="reservaForm" (submit)="onSubmit()">
+    <div class="create">
+      <h2>Formulario de reserva</h2>
+      <div>
+        <input
+          class="controls"
+          placeholder="Nombre"
+          type="text"
+          id="nombre"
+          formControlName="nombre"
+        />
+      </div>
+      <div>
+        <input
+          class="controls"
+          placeholder="Correo electronico"
+          type="email"
+          id="correo"
+          formControlName="correo"
+        />
+      </div>
+      <div>
+        <input
+          class="controls"
+          placeholder="Telefono"
+          type="tel"
+          id="telefono"
+          formControlName="telefono"
+        />
+      </div>
+      <button class="boton" type="submit">Reservar</button>
+    </div>
+  </form>
+</div>
+
+<form [formGroup]="reservaForm" (submit)="onSubmit()">
+  <div class="create">
+    <h2>Formulario de reserva</h2>
+    <!-- Datos del pasajero -->
+    <div *ngFor="let pasajero of pasajeros; let i = index">
+      <h3>Pasajero {{ i + 1 }}</h3>
+      <div>
+        <input
+          class="controls"
+          placeholder="Nombres y Apellidos"
+          type="text"
+          id="nombre{{ i }}"
+          formControlName="nombresApellidos{{ i }}"
+        />
+      </div>
+      <div>
+        <input
+          class="controls"
+          placeholder="Fecha de nacimiento"
+          type="text"
+          id="fechaNacimiento{{ i }}"
+          formControlName="fechaNacimiento{{ i }}"
+        />
+      </div>
+      <div>
+        <label for="genero{{ i }}">Género:</label>
+        <select
+          class="controls"
+          id="genero{{ i }}"
+          formControlName="genero{{ i }}"
+        >
+          <option value="masculino">Masculino</option>
+          <option value="femenino">Femenino</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+      <div>
+        <label for="tipoDocumento{{ i }}">Tipo de documento:</label>
+        <select
+          class="controls"
+          id="tipoDocumento{{ i }}"
+          formControlName="tipoDocumento{{ i }}"
+        >
+          <option value="dni">DNI</option>
+          <option value="pasaporte">Pasaporte</option>
+          <option value="carnetExtranjeria">Carnet de Extranjería</option>
+        </select>
+      </div>
+      <div>
+        <input
+          class="controls"
+          placeholder="Numero de documento"
+          type="text"
+          id="numeroDocumento{{ i }}"
+          formControlName="numeroDocumento{{ i }}"
+        />
+      </div>
+      <div>
+        <input
+          class="controls"
+          placeholder="Email"
+          type="email"
+          id="email{{ i }}"
+          formControlName="email{{ i }}"
+        />
+      </div>
+      <div>
+        <input
+          class="controls"
+          placeholder="Telefono de contacto"
+          type="text"
+          id="telefono{{ i }}"
+          formControlName="telefono{{ i }}"
+        />
+      </div>
+    </div>
+
+    <!-- Contacto de emergencia -->
+    <h3>Contacto de emergencia</h3>
+    <div>
+      <input
+        class="controls"
+        placeholder="Nombres completos"
+        type="text"
+        id="nombreContacto"
+        formControlName="nombreContacto"
+      />
+    </div>
+    <div>
+      <label for="telefonoContacto">Teléfono de contacto:</label>
+      <input
+        class="controls"
+        placeholder="Telefono de contacto"
+        type="text"
+        id="telefonoContacto"
+        formControlName="telefonoContacto"
+      />
+    </div>
+
+    <button class="boton" type="submit">Reservar</button>
+  </div>
+</form>

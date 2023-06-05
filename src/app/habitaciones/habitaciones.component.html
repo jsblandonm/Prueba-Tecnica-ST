@@ -1,0 +1,27 @@
+<div class="lista">
+  <h2>Habitaciones</h2>
+  <ul>
+    <li *ngFor="let habitacion of habitaciones">
+      <div>Costo base: {{ habitacion.costoBase }}</div>
+      <div>Impuestos: {{ habitacion.impuestos }}</div>
+      <div>Tipo de habitación: {{ habitacion.tipoHabitacion }}</div>
+      <div>Ubicación: {{ habitacion.ubicacion }}</div>
+    </li>
+  </ul>
+  <h2>Registrar Habitación</h2>
+</div>
+
+<form (ngSubmit)="agregarHabitacion()">
+  <div class="create">
+    <input
+      class="controls"
+      placeholder="Ubicacion"
+      type="text"
+      id="ubicacion"
+      [(ngModel)]="nuevaHabitacion.ubicacion"
+      required
+    />
+
+    <button class="boton" type="submit">Agregar</button>
+  </div>
+</form>

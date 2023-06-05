@@ -1,0 +1,37 @@
+<form (submit)="crearHotel()">
+  <div class="create">
+    <h2>Crear Hotel</h2>
+
+    <div>
+      <input
+        class="controls"
+        placeholder="Nombre del hotel"
+        type="text"
+        id="nombre"
+        [(ngModel)]="nombreHotel"
+        required
+      />
+    </div>
+    <div>
+      <input
+        class="controls"
+        placeholder="Dirección del hotel"
+        type="text"
+        id="direccion"
+        [(ngModel)]="direccionHotel"
+        required
+      />
+    </div>
+    <div>
+      <input
+        class="controls"
+        placeholder="Habitaciones disponibles"
+        type="number"
+        id="habitaciones"
+        [(ngModel)]="habitacionesDisponibles"
+        required
+      />
+    </div>
+    <button class="boton" type="submit">Crear</button>
+  </div>
+</form>

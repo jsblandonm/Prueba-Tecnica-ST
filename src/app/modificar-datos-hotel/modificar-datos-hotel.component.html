@@ -1,0 +1,39 @@
+<form (submit)="modificarDatosHotel()">
+  <div class="create">
+    <h2>Modificar Datos de Hotel</h2>
+    <div>
+      <label for="hotel">Hotel:</label>
+      <select
+        class="controls"
+        id="hotel"
+        [(ngModel)]="hotelSeleccionado"
+        required
+      >
+        <option *ngFor="let hotel of hoteles" [value]="hotel">
+          {{ hotel.nombre }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <input
+        class="controls"
+        placeholder="Nombre"
+        type="text"
+        id="nombre"
+        [(ngModel)]="nombreHotel"
+        required
+      />
+    </div>
+    <div>
+      <input
+        class="controls"
+        placeholder="Direccion"
+        type="text"
+        id="direccion"
+        [(ngModel)]="direccionHotel"
+        required
+      />
+    </div>
+    <button class="boton" type="submit">Modificar</button>
+  </div>
+</form>

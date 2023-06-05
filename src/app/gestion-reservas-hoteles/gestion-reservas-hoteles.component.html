@@ -1,0 +1,17 @@
+<h2>Gestión de Reservas de Hoteles</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Hotel</th>
+      <th>Habitación</th>
+      <th>Fecha de Reserva</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let reserva of reservas">
+      <td>{{ reserva.hotel }}</td>
+      <td>{{ reserva.habitacion }}</td>
+      <td>{{ reserva.fechaReserva | date }}</td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,6 @@
+<h2>Detalle de Reserva de Hotel</h2>
+<div *ngIf="reserva">
+  <p><strong>Hotel:</strong> {{ reserva.hotel }}</p>
+  <p><strong>Habitación:</strong> {{ reserva.habitacion }}</p>
+  <p><strong>Fecha de Reserva:</strong> {{ reserva.fechaReserva | date }}</p>
+</div>

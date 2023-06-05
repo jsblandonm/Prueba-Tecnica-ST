@@ -1,0 +1,30 @@
+<form (submit)="modificarHabitaciones()">
+  <div class="create">
+    <h2>Modificar Habitaciones</h2>
+
+    <div>
+      <label for="hotel">Hotel:</label>
+      <select
+        class="controls"
+        id="hotel"
+        [(ngModel)]="hotelSeleccionado"
+        required
+      >
+        <option *ngFor="let hotel of hoteles" [value]="hotel">
+          {{ hotel.nombre }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <input
+        class="controls"
+        placeholder="Habitaciones disponibles"
+        type="number"
+        id="habitaciones"
+        [(ngModel)]="habitacionesDisponibles"
+        required
+      />
+    </div>
+    <button class="boton" type="submit">Modificar</button>
+  </div>
+</form>
